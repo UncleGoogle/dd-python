@@ -12,9 +12,8 @@ class ParallelStagesList:
     def empty(cls) -> ParallelStagesList:
         return ParallelStagesList([])
 
-    def add(self, parallel_stages: ParallelStages) -> ParallelStagesList:
-        concatenated_lists = self.all + [parallel_stages]
-        return ParallelStagesList(concatenated_lists)
+    def add(self, parallel_stages: ParallelStages) -> None:
+        self.all = self.all + [parallel_stages]
 
     def __str__(self) -> str:
         return " | ".join([str(parallel_stages) for parallel_stages in self.all])
