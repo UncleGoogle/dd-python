@@ -7,8 +7,9 @@ from collections import defaultdict, deque
 
 
 class StageParallelization:
+
     def of(self, stages: set[Stage]) -> ParallelStagesList:
-        parallel_stages = ParallelStagesList.empty()
+        parallel_stages = ParallelStagesList()
         trees = self._make_trees(stages)
         for level in trees:
             print(level)
